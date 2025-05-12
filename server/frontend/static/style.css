@@ -3,6 +3,18 @@ img{
   align-self: center;
 }
 
+.img_contact {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 60%;
+  align-self: center;
+}
+
+.text_contact{
+    color:turquoise
+}
+
 .card{
   border: rgb(103, 102, 105) 3px solid;
   display: flex;  
@@ -30,6 +42,40 @@ img{
   font-size: 20px;
   color: rgb(97, 64, 128);
   padding:20px;
+}
+
+.contact_card{
+    margin: 20px;
+    text-align: center;
+    height: 580px;
+    width: 1300px;
+    border:1px solid black;
+    border-radius: 15px;
+}
+
+.container_img {
+    margin: 10px;
+    height: 200px;
+    text-align: center;
+    display: table;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.contactus_img{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height:300px;
+    width: auto;
+}
+.container_table{
+    width: 400px;
+    height: auto;
+    text-align: center;
+}
+.data_contact{
+    margin-top: 20px;
 }
 
 .title{
@@ -124,3 +170,12 @@ img{
     text-align:center;
     box-shadow: 2px 2px 3px #999;  
 }
+
+table tr td {
+    border-right: 1px solid black;
+    color: black
+  }
+  
+  table tr td:last-of-type {
+    border: none;
+  }
