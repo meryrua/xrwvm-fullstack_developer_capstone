@@ -14,6 +14,7 @@ import logging
 import json
 from django.views.decorators.csrf import csrf_exempt
 from .populate import initiate
+from .restapis import get_request, analyze_review_sentiments, post_review
 
 from .models import CarMake, CarModel
 
@@ -102,7 +103,7 @@ def get_dealerships(request, state="All"):
 # Create a `get_dealer_reviews` view to render the reviews of a dealer
 def get_dealer_reviews(request,dealer_id):
     if(dealer_id):
-        endpoint = "/fetchReviews/dealer/"+ dealer_id
+        endpoint = "/fetchReviews/dealer/"+ str(dealer_id)
         reviews = get_request(endpoint)
         for review_detail in reviews:
             response = analyze_review_sentiments(review_detail['review'])
@@ -116,7 +117,7 @@ def get_dealer_reviews(request,dealer_id):
 # Create a `get_dealer_details` view to render the dealer details
 def get_dealer_details(request, dealer_id):
     if(dealer_id):
-        endpoint = "/fetchDealers/"+ dealer_id
+        endpoint = "/fetchDealer/"+ str(dealer_id)
         dealerships = get_request(endpoint)
         return JsonResponse({"status":200,"dealers":dealerships})
     else:
