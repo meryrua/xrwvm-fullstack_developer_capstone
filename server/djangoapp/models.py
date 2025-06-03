@@ -32,7 +32,7 @@ class CarMake(models.Model):
 # - __str__ method to print a car make object
 class CarModel(models.Model):
     car_make = models.ForeignKey(CarMake, null=True, on_delete=models.CASCADE)
-    dealer_id = models.IntegerField()
+    # dealer_id = models.IntegerField() This brokes dropdown for car model in review page
     name = models.CharField(null=False, max_length=100)
     SEDAN = "sedan"
     SUV = "suv"
