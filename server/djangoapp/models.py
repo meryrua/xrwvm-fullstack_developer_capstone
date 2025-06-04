@@ -1,7 +1,7 @@
 # Uncomment the following imports before adding the Model code
 
 from django.db import models
-#from django.utils.timezone import now
+# from django.utils.timezone import now
 from django.core.validators import MaxValueValidator, MinValueValidator
 
 
@@ -15,7 +15,7 @@ from django.core.validators import MaxValueValidator, MinValueValidator
 class CarMake(models.Model):
     name = models.CharField(null=False, max_length=100, default='Ford')
     description = models.TextField()
-    
+
     # Create a toString method for object string representation
     def __str__(self):
         return self.name + ", " + \
@@ -33,7 +33,7 @@ class CarMake(models.Model):
 # - __str__ method to print a car make object
 class CarModel(models.Model):
     car_make = models.ForeignKey(CarMake, null=True, on_delete=models.CASCADE)
-    # dealer_id = models.IntegerField() This brokes dropdown for car model 
+    # dealer_id = models.IntegerField() This brokes dropdown for car model
     # in review page
     name = models.CharField(null=False, max_length=100)
     SEDAN = "sedan"
@@ -54,6 +54,6 @@ class CarModel(models.Model):
             MaxValueValidator(2023),
             MinValueValidator(2015)
         ])
-    
+
     def __str__(self):
         return self.name
